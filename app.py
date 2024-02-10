@@ -10,12 +10,12 @@ app = Flask(__name__)
 ridge_model = pickle.load(open('Models/ridge.pkl','rb'))
 standard_scaler = pickle.load(open('Models/scaler.pkl','rb'))
 
-# Rout for Home Page
-@app.route('/')
-def index():
-    return render_template('index.html')
+# # Rout for Home Page
+# @app.route('/')
+# def index():
+#     return render_template('index.html')
 
-@app.route('/predictdata',methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 def predict_datapoint():
     if request.method == 'POST':
 
